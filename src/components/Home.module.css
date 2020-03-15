@@ -1,0 +1,20 @@
+.homeContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.topnavbar {
+
+}
+
+.content {
+    display: flex;
+}
+
+.sidebar {
+    height: 100vh;
+}
+
+.map {
+
+}
