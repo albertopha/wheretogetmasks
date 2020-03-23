@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import styles from "./Home.module.scss";
-import Map from "./Map";
-// import Sidebar from "./Sidebar";
-// import NavBar from "./Navbar";
+import React, { useState, useEffect } from 'react';
+import styles from './Home.module.scss';
+import Map from './Map';
+import NavBar from './Navbar';
+// import Sidebar from './Sidebar';
 
 declare global {
     interface Window {
@@ -16,9 +16,9 @@ type Options = {
 };
 
 export default function Home() {
-    const [search, setSearch] = useState("");
-    const [location, setLocation] = useState({ lat: 33.450701, lon: 126.570667 });
-    const [level, setLevel] = useState(3);
+    const [ search, setSearch ] = useState('');
+    const [ location, setLocation ] = useState({ lat: 33.450701, lon: 126.570667 });
+    const [ level, setLevel ] = useState(3);
 
     // useEffect(() => {
     // }, [search]);
@@ -35,7 +35,9 @@ export default function Home() {
 
     return (
         <div className={styles.homeContainer}>
-            <div className={styles.topnavbar}>Top Nav bar</div>
+            <div className={styles.topnavbar}>
+                <NavBar />
+            </div>
             <div className={styles.content}>
                 {/* <div className={styles.sidebar}>
                     <Sidebar />
