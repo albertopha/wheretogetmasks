@@ -1,13 +1,13 @@
 import React from 'react';
-import styles from 'Navbar.module.scss';
+import styles from './Navbar.module.scss';
 import { Icon, Menu, MenuItem } from 'semantic-ui-react';
 
-import Search from './common/Search';
+import Search from './Search';
 
 interface MenuItem {
-  key: String,
-  name?: String,
-  color?: String,
+  key: string,
+  name?: string,
+  color?: string,
   onClick?: Function,
   [propName: string]: any
 };
@@ -17,11 +17,11 @@ interface MenuItems {
 };
 
 export default function Navbar() {
-
-  const _getMenuItems = () : MenuItems => {
-    const menuItems : MenuItems = [
+  const _getMenuItems = () => {
+    const menuItems : Array<MenuItem> = [
       {
         key: 'menu',
+        name: "",
         icon: <Icon name='bars' />
       },
       {
@@ -31,12 +31,22 @@ export default function Navbar() {
       }
     ]
 
-    return menuItems;
+    return menuItems.map((mi : MenuItem)  => (
+      <Menu.Item
+        key={mi.key}
+        icon={mi.icon}
+      >
+        {mi.name}
+      </Menu.Item>
+    ))
   }
 
   return (
     <div className={styles.container}>
-      <Menu inverted>
+      <Menu
+        inverted
+        icon
+      >
         {_getMenuItems()}
         <Search />
       </Menu>

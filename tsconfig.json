@@ -19,7 +19,8 @@
     "jsx": "react",
     "noImplicitAny": true,
     "outDir": "./dist/",
-    "sourceMap": true
+    "sourceMap": true,
+    "noEmit": true
   },
   "include": [
     "src"
